@@ -1,7 +1,7 @@
 # Sage Frontend Code Challenge
 
 ## Description
-Hi, here you'll find all the details of the code challenge. Please fork this repo and complete the code challenge. Host it anywhere in the cloud and send your demo link to the Sage hiring team. Your demo should be linked to your fork which will be reviewed by Sage's Frontend Team. 
+Hi, here you'll find all the details of the code challenge. Please fork this repo and complete the code challenge. [Deploy it anywhere](https://create-react-app.dev/docs/deployment/#github-pages) and send your demo link to the Sage hiring team. Your demo should be linked to your fork which will be reviewed by Sage's Frontend Team.
 
 *Our requirements of technology to use for the challenge is very specific. If you do not have experience with specific technologies, you are expected to learn them*
 
