@@ -65,13 +65,13 @@ const Sidebar: React.FC = () => {
           <Text>Jimmy Page</Text>
           <Row spacing="1rem">
             <CircleIcon>
-              <SVG src="/assets/images/call.svg" />
+              <SVG src="/assets/images/call.svg" cursor="pointer" />
             </CircleIcon>
             <CircleIcon>
-              <SVG src="/assets/images/mail.svg" />
+              <SVG src="/assets/images/mail.svg" cursor="pointer" />
             </CircleIcon>
             <CircleIcon>
-              <SVG src="/assets/images/chat.svg" />
+              <SVG src="/assets/images/chat.svg" cursor="pointer" />
             </CircleIcon>
           </Row>
         </FooterBottom>
@@ -188,7 +188,6 @@ const Menu = styled.div({
 const MenuItem = styled.div((props: { selected: boolean }) => ({
   display: 'flex',
   padding: '0 2.5rem',
-  // paddingBottom: '.5rem',
   alignItems: 'center',
   marginTop: '4px',
   height: '2.7rem',
