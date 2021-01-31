@@ -135,6 +135,7 @@ const Input = styled.input({
   margin: '.5rem 1rem',
   paddingLeft: '.7rem',
   marginLeft: '0',
+  // zIndex: -1,
   '::placeholder': {
     opacity: '1',
     color: 'black',

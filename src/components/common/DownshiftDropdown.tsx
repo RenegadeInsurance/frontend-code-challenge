@@ -32,24 +32,24 @@ const DownshiftDropdown: React.FC = () => {
               <Button {...getToggleButtonProps()}>
                 <SVG src="/assets/images/dropdown.svg" />
               </Button>
+              {isOpen ? (
+                <Menu {...getMenuProps()}>
+                  {items.map((item, index) => (
+                    <Items
+                      highlighted={highlightedIndex === index}
+                      selected={selectedItem === item}
+                      {...getItemProps({
+                        key: item,
+                        index,
+                        item,
+                      })}
+                    >
+                      {item}
+                    </Items>
+                  ))}
+                </Menu>
+              ) : null}
             </Dropdown>
-            {isOpen ? (
-              <Menu {...getMenuProps()}>
-                {items.map((item, index) => (
-                  <Items
-                    highlighted={highlightedIndex === index}
-                    selected={selectedItem === item}
-                    {...getItemProps({
-                      key: item,
-                      index,
-                      item,
-                    })}
-                  >
-                    {item}
-                  </Items>
-                ))}
-              </Menu>
-            ) : null}
           </div>
         )}
       </Downshift>
@@ -68,6 +68,7 @@ const Dropdown = styled.div({
   borderRadius: '4px',
   opacity: '0.42',
   margin: '.5rem 1rem',
+  background: 'white',
   position: 'relative',
 });
 const Input = styled.input({
@@ -94,22 +95,29 @@ const Button = styled.button({
   width: '1rem',
 });
 const Menu = styled.ul({
-  width: '198px',
+  display: 'block',
+  background: 'white',
+  width: '21rem',
   border: '1px solid white',
   borderRadius: '4px',
   margin: '0px',
+  marginTop: '.61rem',
   padding: '0px',
+  position: 'absolute',
+  // zIndex: 119,
+  opacity: '1',
 });
 
 const Items = styled.li(
   ({ highlighted, selected }: { highlighted: boolean; selected: boolean }) => ({
-    width: '100%',
-    padding: '5px',
+    padding: '.81rem 1rem',
     listStyle: 'none',
     textDecoration: 'none',
-    border: ' 1px solid #ECECEC',
+    border: '1px solid #ECECEC',
     borderRadius: ' 4px 4px 0px 0px',
     background: selected ? '#ECECEC' : 'white',
+    zIndex: 100,
+    opacity: '1',
     ':hover': {
       backgroundColor: '#ECECEC',
     },
