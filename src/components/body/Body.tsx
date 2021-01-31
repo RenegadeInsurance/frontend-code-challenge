@@ -23,12 +23,28 @@ const Body: React.FC = () => {
           </RichText>
         </Row>
       </BodyTopContainer>
-      <BodyBottomContainer>Bottom</BodyBottomContainer>
+      <BodyBottomContainer>
+        <Row>
+          <Card column={2}>
+            <div>hello</div>
+            <div>world</div>
+          </Card>
+        </Row>
+      </BodyBottomContainer>
     </BodyContainer>
   );
 };
 
 export default Body;
+
+const Card = styled.div((props: { column: number }) => ({
+  padding: '1rem',
+  boxShadow: '0px 5px 10px #A9A9A933',
+  border: '1px solid #ECECEC',
+  borderRadius: '4px',
+  display: 'grid',
+  gridTemplateColumns: `repeat(${props.column},1fr)`,
+}));
 
 const BodyContainer = styled.div({
   overflowY: 'scroll',
