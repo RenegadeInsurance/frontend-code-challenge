@@ -7,6 +7,7 @@ import RichText from '../common/RichText';
 import RoundedButton from '../common/RoundedButton';
 import Row from '../common/Row';
 import SVG from '../common/SVG';
+import FeaturedCard from './FeaturedCard';
 import PackageDetailsCard from './PackageDetailsCard';
 
 const Body: React.FC = () => {
@@ -33,48 +34,22 @@ const Body: React.FC = () => {
       <BodyBottomContainer>
         <AlignVerticle>
           <Row spacing="0 1rem">
-            <Card>
-              <Row spacing="0 .5rem">
-                <SVG src="/assets/images/form.png" />
-                <Column>
-                  <Row justifyContent="space-between">
-                    <RichText bold>Fill up the form</RichText>
-                    <SVG src="/assets/images/arrowRightBlack.png" />
-                  </Row>
-                  <RichText color="#858585" spacing=".4rem 0">
-                    Fill in your basic information to join the Gym Club.
-                  </RichText>
-                </Column>
-              </Row>
-            </Card>
-            <Card>
-              <Row spacing="0 .5rem">
-                <SVG src="/assets/images/find.png" />
-                <Column>
-                  <Row justifyContent="space-between">
-                    <RichText bold>Fill up the form</RichText>
-                    <SVG src="/assets/images/arrowRightBlack.png" />
-                  </Row>
-                  <RichText color="#858585" spacing=".4rem 0">
-                    Fill in your basic information to join the Gym Club.
-                  </RichText>
-                </Column>
-              </Row>
-            </Card>
-            <Card>
-              <Row spacing="0 .5rem">
-                <SVG src="/assets/images/progress.png" />
-                <Column>
-                  <Row justifyContent="space-between">
-                    <RichText bold>Fill up the form</RichText>
-                    <SVG src="/assets/images/arrowRightBlack.png" />
-                  </Row>
-                  <RichText color="#858585" spacing=".4rem 0">
-                    Fill in your basic information to join the Gym Club.
-                  </RichText>
-                </Column>
-              </Row>
-            </Card>
+            <FeaturedCard
+              title="Fill up the form"
+              subTitle="Fill in your basic information to join the Gym Club."
+              icon="form.png"
+            />
+
+            <FeaturedCard
+              icon="find.png"
+              title="Find your perfect gym"
+              subTitle="Easily find your perfect gym club and join the club instantly."
+            />
+            <FeaturedCard
+              icon="progress.png"
+              title="Track your progress"
+              subTitle="Analyze and plan for your tasks and progress."
+            />
           </Row>
         </AlignVerticle>
         <Column>
@@ -85,7 +60,21 @@ const Body: React.FC = () => {
             These recommendations are based on your profile information
           </RichText>
         </Column>
-        <PackageDetailsCard />
+        <PackageDetailsCard
+          title="Pilates"
+          subTitle="Developed first by Joseph Pilates, after whom the technique is name…"
+          price="$ 4,220/6 mo."
+        />
+        <PackageDetailsCard
+          title="Yoga & Meditation"
+          subTitle="Mantra has always believed in a Mind & Body approach which means…"
+          price="$ 4,220/6 mo."
+        />
+        <PackageDetailsCard
+          title="Kettlebell"
+          subTitle="Kettlebell, the exercise routine involving a kettle shaped weight originat…"
+          price="$ 4,220/6 mo."
+        />
       </BodyBottomContainer>
     </BodyContainer>
   );
