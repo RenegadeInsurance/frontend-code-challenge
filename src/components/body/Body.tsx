@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Row from '../common/Row';
+import SVG from '../common/SVG';
 
 const Body: React.FC = () => {
   return (
@@ -24,12 +25,52 @@ const Body: React.FC = () => {
         </Row>
       </BodyTopContainer>
       <BodyBottomContainer>
-        <Row>
-          <Card column={2}>
-            <div>hello</div>
-            <div>world</div>
-          </Card>
-        </Row>
+        <AlignVerticle>
+          <Row spacing="0 1rem">
+            <Card>
+              <Row spacing="0 .5rem">
+                <SVG src="/assets/images/form.png" />
+                <Column>
+                  <Row justifyContent="space-between">
+                    <RichText bold>Fill up the form</RichText>
+                    <SVG src="/assets/images/arrowRightBlack.png" />
+                  </Row>
+                  <RichText color="#858585" spacing=".4rem 0">
+                    Fill in your basic information to join the Gym Club.
+                  </RichText>
+                </Column>
+              </Row>
+            </Card>
+            <Card>
+              <Row spacing="0 .5rem">
+                <SVG src="/assets/images/find.png" />
+                <Column>
+                  <Row justifyContent="space-between">
+                    <RichText bold>Fill up the form</RichText>
+                    <SVG src="/assets/images/arrowRightBlack.png" />
+                  </Row>
+                  <RichText color="#858585" spacing=".4rem 0">
+                    Fill in your basic information to join the Gym Club.
+                  </RichText>
+                </Column>
+              </Row>
+            </Card>
+            <Card>
+              <Row spacing="0 .5rem">
+                <SVG src="/assets/images/progress.png" />
+                <Column>
+                  <Row justifyContent="space-between">
+                    <RichText bold>Fill up the form</RichText>
+                    <SVG src="/assets/images/arrowRightBlack.png" />
+                  </Row>
+                  <RichText color="#858585" spacing=".4rem 0">
+                    Fill in your basic information to join the Gym Club.
+                  </RichText>
+                </Column>
+              </Row>
+            </Card>
+          </Row>
+        </AlignVerticle>
       </BodyBottomContainer>
     </BodyContainer>
   );
@@ -37,13 +78,24 @@ const Body: React.FC = () => {
 
 export default Body;
 
-const Card = styled.div((props: { column: number }) => ({
+const AlignVerticle = styled.div({
+  transform: 'translateY(-50%)',
+});
+
+const Column = styled.div((props: { spacing?: string }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  div: {
+    margin: props.spacing || '0',
+  },
+}));
+const Card = styled.div((props) => ({
+  backgroundColor: 'white',
   padding: '1rem',
   boxShadow: '0px 5px 10px #A9A9A933',
   border: '1px solid #ECECEC',
   borderRadius: '4px',
-  display: 'grid',
-  gridTemplateColumns: `repeat(${props.column},1fr)`,
 }));
 
 const BodyContainer = styled.div({
@@ -52,10 +104,16 @@ const BodyContainer = styled.div({
 });
 
 const RichText = styled.div(
-  (props: { color?: string; bold?: boolean; size?: string }) => ({
+  (props: {
+    color?: string;
+    bold?: boolean;
+    size?: string;
+    spacing?: string;
+  }) => ({
     color: props.color,
     fontSize: props.size,
     fontWeight: props.bold ? 'bold' : 'inherit',
+    padding: props.spacing,
   })
 );
 

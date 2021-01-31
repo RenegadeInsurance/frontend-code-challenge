@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 
 const Row = styled.div(
-  (props: { spacing?: string; justifyContent?: string }) => ({
+  (props: { spacing?: string; justifyContent?: string; margin?: string }) => ({
     display: 'flex',
-    justifyContent: props.justifyContent,
+    justifyContent: props.justifyContent || 'flex-start',
     alignItems: 'center',
-    margin: '0',
     div: {
       margin: props.spacing || '0',
     },
