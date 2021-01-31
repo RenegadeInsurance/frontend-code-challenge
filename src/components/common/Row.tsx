@@ -4,9 +4,10 @@ const Row = styled.div(
   (props: { spacing?: string; justifyContent?: string }) => ({
     display: 'flex',
     justifyContent: props.justifyContent,
-    margin: '1rem 0',
+    alignItems: 'center',
+    margin: '0',
     div: {
-      marginRight: props.spacing,
+      margin: props.spacing || '0',
     },
   })
 );
