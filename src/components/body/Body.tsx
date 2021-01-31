@@ -71,6 +71,14 @@ const Body: React.FC = () => {
             </Card>
           </Row>
         </AlignVerticle>
+        <Column>
+          <RichText bold size="1.2rem" spacing="1rem 0" color="#555555">
+            Recommended Tour Packages
+          </RichText>
+          <RichText color="#858585">
+            These recommendations are based on your profile information
+          </RichText>
+        </Column>
       </BodyBottomContainer>
     </BodyContainer>
   );
