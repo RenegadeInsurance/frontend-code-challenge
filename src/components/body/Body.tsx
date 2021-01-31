@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import Card from '../common/Card';
+import CircularIcon from '../common/CircularIcon';
+import Column from '../common/Column';
+import RichText from '../common/RichText';
+import RoundedButton from '../common/RoundedButton';
 import Row from '../common/Row';
 import SVG from '../common/SVG';
+import PackageDetailsCard from './PackageDetailsCard';
 
 const Body: React.FC = () => {
   return (
@@ -79,6 +85,7 @@ const Body: React.FC = () => {
             These recommendations are based on your profile information
           </RichText>
         </Column>
+        <PackageDetailsCard />
       </BodyBottomContainer>
     </BodyContainer>
   );
@@ -90,51 +97,9 @@ const AlignVerticle = styled.div({
   transform: 'translateY(-50%)',
 });
 
-const Column = styled.div((props: { spacing?: string }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  div: {
-    margin: props.spacing || '0',
-  },
-}));
-const Card = styled.div((props) => ({
-  backgroundColor: 'white',
-  padding: '1rem',
-  boxShadow: '0px 5px 10px #A9A9A933',
-  border: '1px solid #ECECEC',
-  borderRadius: '4px',
-}));
-
 const BodyContainer = styled.div({
   overflowY: 'scroll',
   backgroundColor: 'white',
-});
-
-const RichText = styled.div(
-  (props: {
-    color?: string;
-    bold?: boolean;
-    size?: string;
-    spacing?: string;
-  }) => ({
-    color: props.color,
-    fontSize: props.size,
-    fontWeight: props.bold ? 'bold' : 'inherit',
-    padding: props.spacing,
-  })
-);
-
-const RoundedButton = styled.button({
-  backgroundColor: '#262758',
-  outline: 'none',
-  color: 'white',
-  border: 'none',
-  textTransform: 'uppercase',
-  fontWeight: 'bolder',
-  padding: '0 2rem',
-  borderRadius: '25px',
-  height: '3rem',
 });
 
 const BodyTopContainer = styled.div({
