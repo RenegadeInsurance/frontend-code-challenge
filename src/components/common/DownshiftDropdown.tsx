@@ -75,10 +75,7 @@ const Dropdown = styled.div({
 
 const MenuContainer = styled.div({
   height: '0rem',
-  width: '20rem',
-  borderRadius: '4px',
   opacity: '1',
-  margin: '.5rem 1rem',
   background: 'transparent',
   position: 'relative',
 });

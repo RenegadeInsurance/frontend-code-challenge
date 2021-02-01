@@ -90,7 +90,13 @@ const Body: React.FC = () => {
         <Row justifyContent="space-between">
           <Column>
             <Row>
-              <Input type="text" placeholder="Name" />
+              {/* <Input type="text" placeholder="Name" /> */}
+              <FlatInput>
+                <label htmlFor="name">
+                  Name
+                  <input type="text" id="name" />
+                </label>
+              </FlatInput>
               <Input type="text" placeholder="Email" />
             </Row>
             <Row>
@@ -126,6 +132,21 @@ const Divider = styled.div({
   width: '43rem',
 });
 
+const FlatInput = styled.div({
+  height: '2.5rem',
+  width: '20rem',
+  border: '1px solid #3C498A',
+  borderRadius: '4px',
+  opacity: '0.42',
+  margin: '.5rem 1rem',
+  paddingLeft: '.7rem',
+  marginLeft: '0',
+  '::placeholder': {
+    opacity: '1',
+    color: 'black',
+  },
+});
+
 const Input = styled.input({
   height: '2.5rem',
   width: '20rem',
@@ -135,7 +156,6 @@ const Input = styled.input({
   margin: '.5rem 1rem',
   paddingLeft: '.7rem',
   marginLeft: '0',
-  // zIndex: -1,
   '::placeholder': {
     opacity: '1',
     color: 'black',
