@@ -32,6 +32,8 @@ const DownshiftDropdown: React.FC = () => {
               <Button {...getToggleButtonProps()}>
                 <SVG src="/assets/images/dropdown.svg" />
               </Button>
+            </Dropdown>
+            <MenuContainer>
               {isOpen ? (
                 <Menu {...getMenuProps()}>
                   {items.map((item, index) => (
@@ -49,7 +51,7 @@ const DownshiftDropdown: React.FC = () => {
                   ))}
                 </Menu>
               ) : null}
-            </Dropdown>
+            </MenuContainer>
           </div>
         )}
       </Downshift>
@@ -60,6 +62,7 @@ const DownshiftDropdown: React.FC = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  z-index: 1;
 `;
 
 const Dropdown = styled.div({
@@ -71,6 +74,17 @@ const Dropdown = styled.div({
   background: 'white',
   position: 'relative',
 });
+
+const MenuContainer = styled.div({
+  height: '0rem',
+  width: '20rem',
+  borderRadius: '4px',
+  opacity: '1',
+  margin: '.5rem 1rem',
+  background: 'transparent',
+  position: 'relative',
+});
+
 const Input = styled.input({
   height: '2.4rem',
   width: '20rem',
