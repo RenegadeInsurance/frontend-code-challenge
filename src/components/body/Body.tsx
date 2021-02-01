@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Card from '../common/Card';
-import CircularIcon from '../common/CircularIcon';
 import Column from '../common/Column';
-import DownshiftDropdown from '../common/DownshiftDropdown';
 import RichText from '../common/RichText';
 import RoundedButton from '../common/RoundedButton';
 import Row from '../common/Row';
@@ -36,18 +34,21 @@ const featuredCard = [
 
 const packageDetails = [
   {
+    id: 1,
     title: 'Pilates',
     subTitle:
       'Developed first by Joseph Pilates, after whom the technique is name…',
     price: '$ 4,220/6 mo.',
   },
   {
+    id: 2,
     title: 'Yoga & Meditation',
     subTitle:
       'Mantra has always believed in a Mind & Body approach which means…',
     price: '$ 4,220/6 mo.',
   },
   {
+    id: 3,
     title: 'Kettlebell',
     subTitle:
       'Kettlebell, the exercise routine involving a kettle shaped weight originat…',
@@ -92,8 +93,13 @@ const Body: React.FC = () => {
           title="Recommended Tour Packages"
           subTitle="These recommendations are based on your profile information"
         />
-        {packageDetails.map(({ title, subTitle, price }) => (
-          <PackageDetailsCard title={title} subTitle={subTitle} price={price} />
+        {packageDetails.map(({ id, title, subTitle, price }) => (
+          <PackageDetailsCard
+            key={id}
+            title={title}
+            subTitle={subTitle}
+            price={price}
+          />
         ))}
 
         <Column spacing="1rem 0 0 0">
