@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-props-no-spreading */
 import Downshift from 'downshift';
 import React from 'react';
